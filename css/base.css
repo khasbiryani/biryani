@@ -168,7 +168,18 @@ textarea {
 	line-height: 1.15;  /* 1 */
 	margin: 0;  /* 2 */
 }
-
+.order-now-btn{
+	border-radius:3px ;
+	padding:15px;
+	transition: .3s;
+	}
+.order-now-btn:hover{
+border-radius:3px;
+background-color: #8dc63f;
+color:white;
+padding:15px;
+transition: .3s;
+}
 /* Show the overflow in IE.
  * 1. Show the overflow in Edge. */
 button,
