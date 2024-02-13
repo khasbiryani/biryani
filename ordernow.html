@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+.ordering-delicacy{
+font-family: Georgia, serif;
+text-align:center;
+}
+.logo-div{
+  text-align:left;
+  padding-right:15px;
+  padding-left:15px;
+  float:left;
+ 
+}
+.address-example{
+opacity:0.7;
+
+
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-left:20%;
+  margin-right:20%;
+}
+@media(max-width:500px){
+.container{
+    margin-left:5%;
+  margin-right:5%;
+
+}
+
+}
+</style>
+</head>
+<body>
+
+<div class="ordering-delicacy"><div class="logo-div"><img  width="45px" height="45px" class="logo-img" src="images/khas-logo.png"></div><h3>You are ordering Delicacy <img src="images/delicacy-emoji.png" width="25px", height="25px"></h3></div>
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">Full Name</label>
+    <input type="text" id="fname" name="fullname" placeholder="Your name..">
+
+    <label for="add">Your Valid Address on google maps <br><p class="address-example">eg:1234, N streetname, city,IL - pincode<p></p> </label>
+    <input type="text" id="add" name="address" placeholder="Your full address">
+
+    <label for="area">Area</label>
+    <select id="area" name="area">
+      <option value="Devon">Devon</option>
+      <option value="Lombard">Lombard</option>
+    </select>
+
+    <label for="count">How many plates?</label>
+    <select id="count" name="count">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+
+    <label for="comment">Special Comment</label>
+    <textarea id="comment" name="comment" placeholder="let us know if you have any comments for us relating to this order..." style="height:100px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
