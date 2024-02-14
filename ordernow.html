@@ -67,6 +67,35 @@ opacity:0.7;
 
 }
 </style>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  function check(){
+      if(window.XMLHttpRequest)
+      {
+        obj=new XMLHttpRequest();
+      }
+      else
+      {
+        obj=new ActiveXObject('Microsoft.XMLHTTP');
+      }
+      obj.open("GET","https://khasbiryani.000webhostapp.com/reader.php",true);
+      obj.send();
+      obj.onreadystatechange=function()
+      {
+      if(obj.readyState==4 && obj.status==200)
+      {
+        value=obj.responseText;
+                  console.log(value);
+
+
+              }
+              }
+
+  }
+check();
+
+</script>
 </head>
 <body>
 
