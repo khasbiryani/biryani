@@ -1846,6 +1846,17 @@ input::-moz-focus-inner {
   margin-bottom: .8rem;
 }
 
+.intro-content__text h2 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-size: 5rem;
+  line-height: 1.2;
+  color: #f7dac3;
+  letter-spacing: normal;
+  margin-top: 70px;
+  margin-bottom: .8rem;
+}
+
 
 /* -------------------------------------------------------------------
  * ## intro content bottom
@@ -1900,15 +1911,36 @@ input::-moz-focus-inner {
   margin-top: 1.2rem;
   margin-right: 6px;
 }
-
-.counter span {
-  font-weight: 400;
-  font-size: 1.4rem;
-  color: rgba(255, 255, 255, 0.4);
-  position: relative;
-  left: -2px;
+.plates-left{
+  display:inline;
+  color:#f04a4a;
+}
+.refresh-img:active{
+  -webkit-animation:spin .5s ease-in-out; 
+   -moz-animation:spin .5s linear;
+   animation:spin .5s linear;
+   width:25px;
+   height:25px;
+   transition:0.4s;
+}
+.refresh-img{
+  width:30px;
+  height:30px;
+  transition:0.4s;
+  display:inline;
+  margin-left:10px;
 }
 
+@-moz-keyframes spin {
+   100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+}
+@-webkit-keyframes spin {
+   100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+}
+
+.hide{
+  display:none;
+}
 
 /* -------------------------------------------------------------------
  * ## intro content notify

@@ -19,7 +19,7 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
-input[type=submit] {
+input[type=button] {
   background-color: #04AA6D;
   color: white;
   padding: 12px 20px;
@@ -69,31 +69,14 @@ opacity:0.7;
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
+<script src="js/attribute.js"></script>
 <script type="text/javascript">
-  function check(){
-      if(window.XMLHttpRequest)
-      {
-        obj=new XMLHttpRequest();
-      }
-      else
-      {
-        obj=new ActiveXObject('Microsoft.XMLHTTP');
-      }
-      obj.open("GET","https://khasbiryani.000webhostapp.com/reader.php",true);
-      obj.send();
-      obj.onreadystatechange=function()
-      {
-      if(obj.readyState==4 && obj.status==200)
-      {
-        value=obj.responseText;
-                  console.log(value);
-
-
-              }
-              }
-
-  }
-check();
+  
+  $(document).ready(function() {
+    check_plates_order();
+    // Define your variable with the numeric value
+    
+  });
 
 </script>
 </head>
@@ -102,7 +85,7 @@ check();
 <div class="ordering-delicacy"><div class="logo-div"><img  width="45px" height="45px" class="logo-img" src="images/khas-logo.png"></div><h3>You are ordering Delicacy <img src="images/delicacy-emoji.png" width="25px", height="25px"></h3></div>
 <div class="sub-heading-order"><p>Order as many as you want from the plates left and appreciate only when you can smell your food!! </p></div>
 <div class="container">
-  <form action="">
+  <form id="order-form" method="post" onsubmit="return order();">
     <label for="fname">Full Name</label>
     <input type="text" id="fname" name="fullname" placeholder="Your name..">
     <label for="phone">Phone number</label>
@@ -118,22 +101,13 @@ check();
 
     <label for="count">How many plates?</label>
     <select id="count" name="count">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
+     
     </select>
 
     <label for="comment">Special Comment</label>
     <textarea id="comment" name="comment" placeholder="let us know if you have any comments for us relating to this order..." style="height:100px"></textarea>
 
-    <input type="submit" value="Submit">
+    <input type="button" value="Submit" onclick="order_submit()" id="order_submit">
   </form>
 </div>
 
