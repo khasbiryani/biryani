@@ -275,7 +275,8 @@
                     </div> <!-- end 03. tab contact -->
                     <div class="ss-copyright">
                         <span>© Copyright  2024</span> 
-                        <span>Design by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                        <span>inspired by <a href="https://www.styleshout.com/">StyleShout</a></span>
+                        <span id="visits">...</div>
                     </div>
                 </div> <!-- end tab content -->
 
@@ -310,7 +311,9 @@
     update_plates_left();
     update_days_left();
   });
-  
+  $.getJSON("https://api.countapi.xyz/hit/khasbiryani.github.io/:biryani/visits", function(response) {
+    $("#visits").text(response.value);
+});
     </script>
 
 </body>
