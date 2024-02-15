@@ -105,22 +105,12 @@
                         <h4>Next Delivery in</h4>
             
                         <div class="counter">
-                            <div class="counter__time days">
-                                04
-                                <span>D</span>
+                            <div class="counter__time days" >
+                                <span id="days_counter">00</span>
+                                
+                                <span>Days</span>
                             </div>
-                            <div class="counter__time hours">
-                                00
-                                <span>H</span>
-                            </div>
-                            <div class="counter__time minutes">
-                                00
-                                <span>M</span>
-                            </div>
-                            <div class="counter__time seconds">
-                                00
-                                <span>S</span>
-                            </div>
+                            
                         </div>  <!-- end counter -->
                     </div> <!-- end intro-content__counter-wrap -->
 
@@ -317,6 +307,7 @@
     // Your code to be executed when the DOM is ready
     // plates_left();
     update_plates_left();
+    update_days_left();
   });
   
     </script>

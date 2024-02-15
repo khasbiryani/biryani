@@ -268,3 +268,28 @@ function put_data_dump(dataDump){
         xhr.send();
       });
 }
+
+function update_days_left(){
+    getOrderDate()
+    .then(orderingDate => {
+        console.log(orderingDate);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // Set to midnight to avoid time difference issues
+        const orderingDateObj = new Date(orderingDate);
+        orderingDateObj.setHours(0, 0, 0, 0); // Same for ordering date
+      
+        // Convert to milliseconds and calculate difference
+        const todayMillis = today.getTime();
+        const orderingDateMillis = orderingDateObj.getTime();
+        const diffInMilliSeconds = orderingDateMillis - todayMillis;
+      
+        // Convert milliseconds to days (rounded down) and return
+        const daysLeft = Math.floor(diffInMilliSeconds / (1000 * 60 * 60 * 24));
+        document.getElementById("days_counter").innerHTML = daysLeft;
+      
+    })
+    .catch(error => {
+      console.error("Error retrieving orderingDate:", error);
+    });
+
+}
