@@ -169,7 +169,9 @@ textarea {
 	margin: 0;  /* 2 */
 }
 .order-now-btn{
-	border-radius:3px ;
+	border-radius:3px;
+	background-color: #8dc63f;
+	color:white;
 	padding:15px;
 	transition: .3s;
 	}
