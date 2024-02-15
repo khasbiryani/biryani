@@ -268,6 +268,31 @@ function put_data_dump(dataDump){
         xhr.send();
       });
 }
+function update_visit_count(){
+    return new Promise((resolve, reject) => {
+        // Create the AJAX request
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://khasbiryani.000webhostapp.com/update_visit_count.php", true);
+    
+        // Handle response received
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              // Parse and resolve with extracted value
+              // console.log(xhr.responseText);
+              let res= xhr.responseText; // assuming JSON response
+              resolve(res);
+            } else {
+              // Reject with error information
+              reject(new Error("Error fetching data: " + xhr.statusText));
+            }
+          }
+        };
+    
+        // Send the request
+        xhr.send();
+      });
+}
 
 function update_days_left(){
     getOrderDate()
@@ -292,4 +317,14 @@ function update_days_left(){
       console.error("Error retrieving orderingDate:", error);
     });
 
+}
+function visit_count(){
+update_visit_count()
+.then(visitCount => {
+    document.getElementById("visits").innerHTML = visitCount;
+  console.log(visitCount);
+})
+.catch(error => {
+  console.error("Error retrieving orderingDate:", error);
+});
 }

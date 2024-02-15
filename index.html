@@ -310,10 +310,9 @@
     // plates_left();
     update_plates_left();
     update_days_left();
-  });
-  $.getJSON("https://api.countapi.xyz/hit/khasbiryani.github.io/:biryani/visits", function(response) {
-    $("#visits").text(response.value);
-});
+    visit_count();
+        });
+ 
     </script>
 
 </body>
