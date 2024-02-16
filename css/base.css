@@ -202,7 +202,9 @@ select {
 	/* 1 */
 	text-transform: none;
 }
-
+p{
+	text-align: justify;
+}
 /* Correct the inability to style clickable types in iOS and Safari. */
 button,
 [type="button"],
