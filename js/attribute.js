@@ -203,7 +203,7 @@ $(".order_submit").click(function(){
         if (!alertBox.classList.contains("hide")) {
             alertBox.classList.add('hide');
           }
-          let dataDump = orderingDate.value.trim()+"$"+fname.value.trim()+"$"+phone.value.trim()+"$"+address.value.trim()+"$"+area.value.trim()+"$"+count.value.trim()+"$"+document.getElementById("comment").value.trim();
+          let dataDump = orderingDate.value.trim()+"$"+fname.value.trim()+"$"+phone.value.trim()+"$"+address.value.trim()+"$"+area.value.trim()+"$"+count.value.trim()+"$"+removeSpecialCharsRegex(document.getElementById("comment").value.trim());
       // Optionally add further processing or validation here
       put_data_dump(dataDump)
       .then(res => {
@@ -328,3 +328,8 @@ update_visit_count()
   console.error("Error retrieving orderingDate:", error);
 });
 }
+
+function removeSpecialCharsRegex(str) {
+    const regex = /[^a-zA-Z0-9 ]/g; // Match any character that's not a letter, number, or space
+    return str.replace(regex, ''); // Replace matches with an empty string
+  }
