@@ -2541,6 +2541,9 @@ html.no-csstransitions .intro-content__bottom {
   .grid-overlay::after {
     display: none;
   }
+  .intro-content {
+    padding-top: 10rem;
+  }
 
 }
 
