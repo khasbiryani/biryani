@@ -169,11 +169,14 @@ textarea {
 	margin: 0;  /* 2 */
 }
 .order-now-btn{
-	border-radius:3px;
+	border-radius:5px;
 	background-color: #8dc63f;
 	color:white;
-	padding:15px;
+	padding:12px;
 	transition: .3s;
+	max-width:7.5em;
+	text-align: center;
+	margin-bottom: 2em;
 	}
 .order-now-btn:hover{
 border-radius:3px;
