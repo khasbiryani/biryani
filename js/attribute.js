@@ -203,7 +203,7 @@ $(".order_submit").click(function(){
         if (!alertBox.classList.contains("hide")) {
             alertBox.classList.add('hide');
           }
-          let dataDump = orderingDate.value.trim()+"$"+fname.value.trim()+"$"+phone.value.trim()+"$"+address.value.trim()+"$"+area.value.trim()+"$"+count.value.trim()+"$"+removeSpecialCharsRegex(document.getElementById("comment").value.trim());
+          let dataDump = orderingDate.value.trim()+"$"+removeSpecialCharsRegex(fname.value.trim())+"$"+phone.value.trim()+"$"+removeSpecialCharsRegex(address.value.trim())+"$"+area.value.trim()+"$"+count.value.trim()+"$"+removeSpecialCharsRegex(document.getElementById("comment").value.trim());
       // Optionally add further processing or validation here
       put_data_dump(dataDump)
       .then(res => {
@@ -330,6 +330,24 @@ update_visit_count()
 }
 
 function removeSpecialCharsRegex(str) {
-    const regex = /[^a-zA-Z0-9 ]/g; // Match any character that's not a letter, number, or space
+    const regex = /[^a-zA-Z0-9 ,-]/g; // Match any character that's not a letter, number, or space
     return str.replace(regex, ''); // Replace matches with an empty string
+  }
+
+  function phonevalidate(evt) {
+    var theEvent = evt || window.event;
+  
+    // Handle paste
+    if (theEvent.type === 'paste') {
+        key = event.clipboardData.getData('text/plain');
+    } else {
+    // Handle key press
+        var key = theEvent.keyCode || theEvent.which;
+        key = String.fromCharCode(key);
+    }
+    var regex = /[0-9]|\./;
+    if( !regex.test(key) ) {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+    }
   }
