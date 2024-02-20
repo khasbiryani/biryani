@@ -2516,7 +2516,9 @@ html.no-csstransitions .intro-content__bottom {
 @media screen and (max-width:500px) {
   .intro-content {
     max-width: 90vw;
+    padding-top: 10rem;
   }
+  
 
   .intro-content__bottom {
     margin-right: 5rem;
@@ -2541,9 +2543,7 @@ html.no-csstransitions .intro-content__bottom {
   .grid-overlay::after {
     display: none;
   }
-  .intro-content {
-    padding-top: 10rem;
-  }
+  
 
 }
 
