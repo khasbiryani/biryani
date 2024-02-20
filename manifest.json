@@ -1,0 +1,22 @@
+{
+	"name":"KHAS biryani",
+	"short_name":"KHAS",
+	"start_url":"index.html",
+	"display":"standalone",
+	"background_color":"white",
+	"theme_color":"black",
+	"scope": ".",
+	"description":"Khaja's Hyderabadi Authentic's biryani",
+	"icons":[
+	{
+	"src":"images/khas-logo.png",					
+	"sizes":"300x300",
+	"type":"image/png"
+	},
+	{
+	"src":"images/khas-logo.png",
+	"sizes":"600x600",
+	"type":"image/png"
+	}
+]
+}
