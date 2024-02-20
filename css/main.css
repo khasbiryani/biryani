@@ -1578,7 +1578,7 @@ input::-moz-focus-inner {
 
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:340px) {
   .header-logo {
     right: auto;
     left: 4.2rem;
@@ -1904,7 +1904,7 @@ input::-moz-focus-inner {
   font-weight: 600;
   font-size: 3.2rem;
   line-height: 1;
-  color: #ffffff;
+  color: #f58840;
 }
 
 .counter__time {
@@ -2468,7 +2468,8 @@ html.no-csstransitions .intro-content__bottom {
   }
 
   .counter span {
-    font-size: 1.2rem;
+    font-size: 3.2rem;
+    color:#f58840;
   }
 
 }
