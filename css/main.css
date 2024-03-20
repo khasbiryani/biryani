@@ -80,7 +80,9 @@ body {
   padding: 0;
   position: relative;
 }
-
+.mySlides{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
 
 /* ------------------------------------------------------------------- 
  * ## links 
@@ -101,7 +103,42 @@ a:active {
   outline: 0;
 }
 
+.container{
+  margin-top:100px;
+  margin-bottom:100px;
+}
 
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+
+#custCarousel .carousel-indicators {
+position: static;
+margin-top:20px;
+}
+
+#custCarousel .carousel-indicators > li {
+width:100px;
+}
+
+#custCarousel .carousel-indicators li img {
+display: block;
+opacity: 0.5;
+}
+
+#custCarousel .carousel-indicators li.active img {
+opacity: 1;
+}
+
+#custCarousel .carousel-indicators li:hover img {
+opacity: 0.75;
+}
+
+.carousel-item img{
+
+width:80%;
+}
 
 /* ===================================================================
  * # typography & general theme styles

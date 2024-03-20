@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- script
     ================================================== -->
     <script src="js/modernizr.js"></script>
@@ -30,9 +31,10 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
-   
+    
 
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
 
     <!-- Meta Tags required for
 	Progressive Web App -->
@@ -214,12 +216,42 @@
 
                             <div class="row tab-content__item-header">
                                 <div class="column">
+                                    <h1>Our Nawabi Biryani</h1>
+                                </div>
+                            </div>
+                            <div class="w3-content" style="max-width:1000px;">
+                                <img class="mySlides" style='border-radius:10px;' src="images/khasbiryani01.png" style="width:100%;display:none">
+                                <img class="mySlides" style='border-radius:10px;' src="images/khasbiryani02.png" style="width:100%">
+                                <img class="mySlides" style='border-radius:10px;' src="images/khasbiryani03.png" style="width:100%;display:none">
+                                <img class="mySlides" style='border-radius:10px;' src="images/khasbiryani04.png" style="width:100%;display:none">
+                                <img class="mySlides" style='border-radius:10px;' src="images/khasbiryani05.png" style="width:100%;display:none">
+                                <div class="w3-row-padding w3-section" style="text-align:center;">
+                                  <div class="w3-col s2">
+                                    <img class="demo w3-opacity w3-hover-opacity-off" src="images/khasbiryani01.png" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
+                                  </div>
+                                  <div class="w3-col s2">
+                                    <img class="demo w3-opacity w3-hover-opacity-off" src="images/khasbiryani02.png" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+                                  </div>
+                                  <div class="w3-col s2">
+                                    <img class="demo w3-opacity w3-hover-opacity-off" src="images/khasbiryani03.png" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
+                                  </div>
+                                  <div class="w3-col s2">
+                                    <img class="demo w3-opacity w3-hover-opacity-off" src="images/khasbiryani04.png" style="width:100%;cursor:pointer" onclick="currentDiv(4)">
+                                  </div><div class="w3-col s2">
+                                    <img class="demo w3-opacity w3-hover-opacity-off" src="images/khasbiryani05.png" style="width:100%;cursor:pointer" onclick="currentDiv(5)">
+                                  </div>
+                                </div>
+                              </div>
+
+
+                            <div class="row tab-content__item-header">
+                                <div class="column">
                                     <h1>Order us?</h1>
                                 </div>
                             </div>
 
                             <p class="lead">
-                                Ordering us is as simple as it gets.
+                                Ordering us is as simple as it gets. for <b><u>single orders</u></b>: 
                                 <div style="color:#0a3e11;font-family:'Gothic A1', sans-serif;font-size:2rem;font-weight:500;" >
                                 <li class="lead">We post available plates to order on this site and on facebook/Whatsapp groups every wednesday.</li>    
                                 <li class="lead">Click on order now on this site and fill up small form. </li>
@@ -236,6 +268,19 @@
                                     Remember, orders with invalid address or phone number will be cancelled without any update. Then, on saturday while you are craving for lunch we bring the delicacy to your door step. you only have to appreciate us when you smell the food!!</p>
                             </p>
 
+                            <!-- catering order -->
+                            <p class="lead">
+                                For <b><u>catering orders</u></b>, you need to order atleast 2 days in advance. 
+                                <div style="color:#0a3e11;font-family:'Gothic A1', sans-serif;font-size:2rem;font-weight:500;" >
+                                <li class="lead">Call/Text us and let us know your order.</li>    
+                                <li class="lead">we have half tray and full tray option available under catering menu. </li>
+                                <li class="lead">provide us with name, address, phone number, date and time (after 4PM only) for delivery.</li>
+                                <li class="lead">half tray comes with 16oz raita and mirchi ka salan. Full tray comes with 32oz raita and mirchi ka salan.</li>
+                                <li class="lead">That's it! Your freshly cooked order will be delivered to you on your selected date and time. appreciate us only when you smell your food!</li>
+                                
+                                
+                                </div>
+                                </p>
 
                         <div class="row tab-content__item-header">
                             <div class="column">
@@ -372,5 +417,40 @@ window.addEventListener('load', () => {
     }
   }
     </script>
+<script>
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
 
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+}
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  x[myIndex-1].style.transition = "5s";  
+  setTimeout(carousel, 5000); // Change image every 2 seconds
+}
+</script>
 </body>
